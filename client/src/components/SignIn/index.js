@@ -34,6 +34,7 @@ const SignIn = props => {
     headline: 'LogIn'
   };
 
+  /*
   //////////////////////////////////////
 
   const initialState = {
@@ -60,7 +61,10 @@ class SignIn extends Component {
 
   handleSubmit = async e =>{
     e.preventDefault();
+    const {name, value} = this.state
   }
+/////////////////////////////////////////
+*/
 
   render (){
     const {email,password} = this.state;
