@@ -19,8 +19,8 @@ import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
 import './default.scss';
 
-
 const App = props => {
+  // const dispatch = useDispatch();   
   const { setCurrentUser, currentUser } = props;
 
   useEffect(() => {
@@ -28,13 +28,16 @@ const App = props => {
       if (userAuth) {
         const userRef = await handleUserProfile(userAuth);
         userRef.onSnapshot(snapshot => {
+          // dispatch (setCurrentUser({   
           setCurrentUser({
             id: snapshot.id,
             ...snapshot.data()
-          });
+            // }));
+            });
         })
       }
 
+      // dispatch(setCurrentUser(userAuth));   
       setCurrentUser(userAuth);
     });
 
@@ -52,13 +55,15 @@ const App = props => {
               </HomepageLayout>
             )}
             />
-            <Route path="/registration" render={() => currentUser ? <Redirect to="/" /> : (
+             <Route path="/registration" render={() => (
+            // <Route path="/registration" render={() => currentUser ? <Redirect to="/" /> : ( 
               <MainLayout>  
                 <Registration />
               </MainLayout>
             )} />
             <Route path="/login" 
-            render={() => currentUser ? <Redirect to="/" /> : (
+            render={() => (
+            // render={() => currentUser ? <Redirect to="/" /> : (
               <MainLayout >
                   <Login />
                 </MainLayout>
