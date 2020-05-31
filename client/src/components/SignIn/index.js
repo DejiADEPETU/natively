@@ -1,78 +1,55 @@
-import React, { useState, Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
+import { signInUser, signInWithGoogle, resetAllAuthForms } from './../../redux/User/user.actions';
 
 import './styles.scss';
-import { signInWithGoogle, auth } from './../../firebase/utils';
 
 import AuthWrapper from './../AuthWrapper';
 import FormInput from './../forms/FormInput';
 import Button from './../forms/Button';
 
+const mapState = ({ user }) => ({
+  signInSuccess: user.signInSuccess
+});
+
 const SignIn = props => {
+  const { signInSuccess } = useSelector(mapState);
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
+
+  useEffect(() => {
+    if (signInSuccess) {
+      resetForm();
+      dispatch(resetAllAuthForms());
+      props.history.push('/');
+    }
+
+  }, [signInSuccess]);
 
   const resetForm = () => {
     setEmail('');
     setPassword('');
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault();
+    dispatch(signInUser({ email, password }));
+  }
 
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      resetForm();
-      props.history.push('/');
-
-    } catch (err) {
-      // console.log(err);
-    }
+  const handleGoogleSignIn = () => {
+    dispatch(signInWithGoogle());
   }
 
   const configAuthWrapper = {
     headline: 'LogIn'
   };
 
-  /*
-  //////////////////////////////////////
-
-  const initialState = {
-    email:'',
-    password:''
-  }:
-
-class SignIn extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      ...initialState
-    };
-  
-    this.handleChange = this.handleChange.bind.(this);
-  }
-  
-  handleChange(e) {
-    const {name, value} = e.target;
-    this.setState({
-      [name]:value
-    });
-  }
-
-  handleSubmit = async e =>{
-    e.preventDefault();
-    const {name, value} = this.state
-  }
-/////////////////////////////////////////
-*/
-
-  render (){
-    const {email,password} = this.state;
-
-    return (
+  return (
     <AuthWrapper {...configAuthWrapper}>
       <div className="formWrap">
-        <form onSubmit={handleSubmit}>   {/*<form> onSubmit={handleSubmit}>   </form> */}
+        <form onSubmit={handleSubmit}>
 
           <FormInput
             type="email"
@@ -92,11 +69,11 @@ class SignIn extends Component {
 
           <Button type="submit">
             LogIn
-          </Button>
+            </Button>
 
           <div className="socialSignin">
             <div className="row">
-              <Button onClick={signInWithGoogle}>
+              <Button onClick={handleGoogleSignIn}>
                 Sign in with Google
               </Button>
             </div>
@@ -105,7 +82,7 @@ class SignIn extends Component {
           <div className="links">
             <Link to="/recovery">
               Reset Password
-            </Link>
+              </Link>
           </div>
 
         </form>
