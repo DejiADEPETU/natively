@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import React from './node_modules/react';
+import { BrowserRouter, Route, Link } from './node_modules/react-router-dom'
 import './Collections.css';
 import HomeScreen from './screens/HomeScreen1';
 import ProductScreen from './screens/ProductScreen1';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
-import { useSelector } from 'react-redux';
+import { useSelector } from './node_modules/react-redux';
 import RegisterScreen from './screens/RegisterScreen';
 import ProductsScreen from './screens/ProductsScreen';
 import ShippingScreen from './screens/ShippingScreen';
