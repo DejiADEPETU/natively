@@ -16,7 +16,7 @@ import data from './data';
 // }).catch((error) => console.log(error.reason));
 
 
-// const app = express();
+const app = express();
 // app.use(bodyParser.json());
 
 // app.use('/api/users', userRoute);
@@ -31,8 +31,9 @@ import data from './data';
 //   res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
 // });
 
-app.get('/api/products", (req, res) => {
+app.get("/api/products", (req, res) => {
     res.send(data.products);
 });
 
-app.listen(config.PORT, () => { console.log('Server started at http://localhost:5000'); });
+// app.listen(config.PORT, () => { console.log('Server started at http://localhost:5000'); });
+app.listen(5000, () => { console.log('Server started at http://localhost:5000') })

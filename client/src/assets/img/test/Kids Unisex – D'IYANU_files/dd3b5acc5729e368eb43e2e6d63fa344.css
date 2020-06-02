@@ -1,0 +1,45 @@
+
+.design-pre-order-template-wrapper [data-editable="pre-order-button"] {
+	background-color: #2F8FDB;
+	padding-left: 30px;
+	padding-top: 13px;
+	border-radius: 5px;
+	border-color: #0478CD;
+	border-width: 1px;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: inherit;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	padding-bottom: 13px;
+	padding-right: 30px;
+}
+.design-pre-order-template-wrapper [data-editable="pre-order-message"] {
+	background-color: #F4F4F4;
+	border-radius: 10px;
+	border-color: #D7D7D7;
+	border-width: 1px;
+	color: #232323;
+	font-size: 14px;
+	font-family: inherit;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+}
+.design-pre-order-template-wrapper [data-editable="pre-order-button-hover"] {
+	background-color: #4FA7EC;
+	border-color: #4FA7EC;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: inherit;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-radius: 5px;
+	border-width: 1px;
+}

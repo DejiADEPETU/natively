@@ -18,7 +18,7 @@ const Header = props => {
       <div className="wrap">
         <div className="logo">
           <Link to="/">
-            <img src={Logo} alt="SimpleTut LOGO" />
+            <img src={Logo} alt="Natively Band_Logo" />
           </Link>
         </div>
 
