@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { auth, handleUserProfile } from './firebase/utils';
 import { setCurrentUser } from './redux/User/user.actions';
-
+// import ShopMen from './assets/img/collections/ShopMen';
+// import ShopWomen from './assets/img/collections/ShopWomen';
 // hoc
 import WithAuth from './hoc/withAuth';
 
@@ -55,6 +56,32 @@ const App = props => {
               </HomepageLayout>
             )}
             />
+            
+            {/* <Route exact path="/shopmen" render={() => (
+              <HomepageLayout> 
+                <ShopMen />
+              </HomepageLayout>
+            )}
+            />
+
+            <Route exact path="/shopwomen" render={() => (
+              <HomepageLayout> 
+                <ShopWomen />
+              </HomepageLayout>
+            )} */}
+            />
+            {/*   
+            <Route exact path="/" render={() => (
+              <HomepageLayout> 
+                <Homepage />
+              </HomepageLayout>
+            )}
+            /> */}
+
+
+
+
+
              <Route path="/registration" render={() => (
             // <Route path="/registration" render={() => currentUser ? <Redirect to="/" /> : ( 
               <MainLayout>  

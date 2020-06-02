@@ -15,7 +15,7 @@ import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
 
-function App() {
+function Collections() {
 
 //   const userSignin = useSelector(state => state.userSignin);
 //   const { userInfo } = userSignin;
@@ -97,4 +97,4 @@ function App() {
   );
 }
 
-export default App;
+export default Collections;
