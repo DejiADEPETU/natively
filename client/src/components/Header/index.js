@@ -21,9 +21,9 @@ const Header = props => {
             <img src={Logo} alt="Natively Band_Logo" />
           </Link>
         </div >
-            <h1 >
+            {/* <h1 >
                     <Link   to="/collecctions">Shop</Link>
-            </h1>
+            </h1> */}
 
 
 
