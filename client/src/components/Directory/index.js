@@ -6,7 +6,7 @@ import './styles.scss';
 
 
 
-// Welcome MODAL comes here   ****  {Refactor Phase 3, if time permits}
+// Welcome (Sale Furnel) MODAL comes here   ****  {Refactor Phase 3, if time permits}
 
 
 
@@ -21,9 +21,9 @@ const Directory = props => {
             backgroundImage: `url(${ShopWomen})`
           }}
         >
-          {/* <a>
+          <a href = "../../pages/Collections/Tx.js">
             Shop Womens 
-          </a> */}
+          </a> 
         </div>
         <div
           className="item"
@@ -31,9 +31,9 @@ const Directory = props => {
             backgroundImage: `url(${ShopMen})`
           }}
         >
-          {/* <a>
+         <a href = "../../pages/Collections/Tx.js">
             Shop Mens
-          </a> */}
+          </a> 
         </div>
         {/* <div
           className="item"
