@@ -4,6 +4,13 @@ import ShopWomen from './../../assets/img/shopWomens.jpg';
 // import ShopKid from '../../assets/img/shopKids.jpg';
 import './styles.scss';
 
+
+
+// Welcome MODAL comes here   ****  {Refactor Phase 3, if time permits}
+
+
+
+
 const Directory = props => {
   return (
     <div className="directory">
