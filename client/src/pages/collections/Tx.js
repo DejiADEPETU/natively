@@ -23,8 +23,9 @@ function Tx(){
           <Link to="/">NATIVELY</Link> 
         </div>
         <div className="header-links">
-          <a href="cart.html">Cart</a>
-          <a href="signin.html">Sign In</a>
+        <Link to="/cart">Cart</Link>
+          <Link to="/login">SignIn</Link>
+          <Link to="/registation">Join</Link>
         </div>
       </header>
       <aside className="sidebar">
