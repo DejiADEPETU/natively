@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Tx.css';
 import { Link } from 'react-router-dom';
+import data from './Data';
 
 function Tx(){ 
   const openMenu = () =>{
@@ -26,11 +27,11 @@ function Tx(){
         </div>
       </header>
       <aside className="sidebar">
-        <h3>Shopping Categories</h3>
+        <h3>COLLECTIONS</h3>
         <button className="sidebar-close-button" onClick={closeMenu}>x</button>
         <ul>
           <li>
-            <a href="index.html">Pants</a>
+            <a href="index.html">Pants</a>  {/*  <Link to="/">mSuits wSuits gCloths bCloths</Link>       */}
           </li>
   
           <li>
@@ -41,76 +42,22 @@ function Tx(){
       </aside>
       <main className="main">
         <div className="content">
-          <div><h1>232353</h1></div>
           <ul className="products">
-            <li>
-              <div className="product">
-                <img className="product-image" src="../../../public/images/d1.jpg" alt="product" />
-                <div className="product-name">
-                  <a href="product.html">Slim Shirt</a>
+            {
+              data.products.map(product => 
+                <li>
+                <div className="product">
+                  <img className="product-image" src={product.image} alt="product" />
+                  <div className="product-name">
+                    <a href="product.html">{product.name}</a>
+                  </div>
+                  <div className="product-brand">{product.brand}</div>
+                  <div className="product-price">{product.price}</div>
+                  <div className="product-rating">{product.rating} Stars {product.numReveiws}</div>
                 </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 Stars (10 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="./men/aa.jpg" alt="product" />
-                <div className="product-name">
-                  <a href="product.html">Slim Shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 Stars (10 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="./men/aa.jpg" alt="product" />
-                <div className="product-name">
-                  <a href="product.html">Slim Shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 Stars (10 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="./men/aa.jpg" alt="product" />
-                <div className="product-name">
-                  <a href="product.html">Slim Shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 Stars (10 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="./men/aa.jpg" alt="product" />
-                <div className="product-name">
-                  <a href="product.html">Slim Shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 Stars (10 Reviews)</div>
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="./men/aa.jpg" alt="product" />
-                <div className="product-name">
-                  <a href="product.html">Slim Shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 Stars (10 Reviews)</div>
-              </div>
-            </li>
-  
-          </ul>
+              </li> )
+            }
+            </ul>
         </div>
   
       </main>
@@ -128,21 +75,3 @@ function Tx(){
 
 
 
-
-
-
-
-
-
-
-// <script>
-// function openMenu() {
-//   document.querySelector(".sidebar").classList.add("open");
-// }
-// function closeMenu() {
-//   document.querySelector(".sidebar").classList.remove("open")
-// }
-// </script>
-// </body>
-
-// </html>
