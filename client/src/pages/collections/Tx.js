@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Tx.css';
 import { Link } from 'react-router-dom';
 import data from './Data';
+import  ProductDetails from './ProductDetails';
 
 function Tx(){ 
   const openMenu = () =>{
@@ -47,9 +48,10 @@ function Tx(){
               data.products.map(product => 
                 <li>
                 <div className="product">
-                  <img className="product-image" src={product.image} alt="product" />
+                <Link to={'/product/' + product.id}><img className="product-image" src={product.image} alt="product" /></Link>
+                  
                   <div className="product-name">
-                    <a href="product.html">{product.name}</a>
+                    <Link to={'/product/' + product.id}>{product.name}</Link>
                   </div>
                   <div className="product-brand">{product.brand}</div>
                   <div className="product-price">{product.price}</div>
