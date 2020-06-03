@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Tx.css';
+import { Link } from 'react-router-dom';
 
-function App(){ 
+function Tx(){ 
   const openMenu = () =>{
     document.querySelector(".sidebar").classList.add("open");
   }
@@ -17,7 +18,7 @@ function App(){
           <button onClick={openMenu}>
             &#9776;
           </button>
-          <a href="index.html">NATIVELY</a>
+          <Link to="/">NATIVELY</Link> 
         </div>
         <div className="header-links">
           <a href="cart.html">Cart</a>
@@ -40,6 +41,7 @@ function App(){
       </aside>
       <main className="main">
         <div className="content">
+          <div><h1>232353</h1></div>
           <ul className="products">
             <li>
               <div className="product">
@@ -121,6 +123,13 @@ function App(){
             
     )
   }
+
+  export default Tx;
+
+
+
+
+
 
 
 
